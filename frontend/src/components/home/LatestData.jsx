@@ -17,13 +17,13 @@ export default function LatestData({data, username}) {
             
             }}
         >
-            <h1 style={{fontSize: 48}}>
+            <h1 style={{fontSize: '3rem'}}>
                 <FormattedMessage id="HOME_LATEST_DATA"/>
             </h1>
             <div style={{
                 display: 'flex',
                 flexDirection: 'row',
-                justifyContent: 'space-around',
+                // justifyContent: 'space-around',
                 alignItems: 'center',
                 justifyContent: 'center',
             }}>

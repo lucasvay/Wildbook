@@ -27,10 +27,10 @@ const PickUp = ({ data }) => {
                 width: '500px',
                 zIndex: 1,
             }}>
-                <h1 style={{ fontSize: '4em' }}>
+                <h1 style={{ fontSize: '4rem' }}>
                     <FormattedMessage id='HOME_PICK_UP_1' />
                 </h1>
-                <h1 style={{ fontSize: '4em', }}>
+                <h1 style={{ fontSize: '4rem', }}>
                     <FormattedMessage id='HOME_PICK_UP_2' />
                 </h1>
                 <LatestActivityItem

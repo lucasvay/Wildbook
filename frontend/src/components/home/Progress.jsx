@@ -1,5 +1,6 @@
 import React from "react";
 import { FormattedMessage } from "react-intl";
+import ProgressBar from "../../components/ProgressBar";
 
 export default function Progress({ 
     name, 
@@ -42,8 +43,9 @@ export default function Progress({
                 <a 
                     href={href}
                     target={newTab ? "_blank" : "_self"} 
-                    style={{
-                        textDecoration: noUnderline ? 'none' : 'underline', 
+                    rel="noopener noreferrer"
+                    className={`text-decoration-${noUnderline ? 'none' : 'underline'} ${disabled ? 'text-muted' : ''}`}
+                    style={{                        
                         color: styles.color, 
                         cursor: styles.cursor, 
                     }}
@@ -52,7 +54,7 @@ export default function Progress({
                     <span>{encounters} <FormattedMessage id='ENCOUNTERS'/></span>
                 </a>
             </div>
-            <div style={{
+            {/* <div style={{
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'flex-start',
@@ -89,7 +91,8 @@ export default function Progress({
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
+            <ProgressBar progress={progress}/>
         </div>
     );
 }

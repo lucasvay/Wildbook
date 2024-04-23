@@ -22,12 +22,12 @@ export default function Projects({ data }) {
             alignItems: 'flex-end',
         }}>
             <h1 style={{
-                fontSize: '4em',
+                fontSize: '4rem',
             }}>
                 <FormattedMessage id="HOME_VIEW_PROJECT_1"/>
             </h1>
             <h1 style={{
-                fontSize: '4em',
+                fontSize: '4rem',
             }}>
                 <FormattedMessage id="HOME_VIEW_PROJECT_2"/>
             </h1>
@@ -70,7 +70,10 @@ export default function Projects({ data }) {
                     alignItems: 'center',
                 }}
                 target='_blank'
-            ><FormattedMessage id='SEE_ALL' /><i class="bi bi-arrow-right-short" style={{ fontSize: 22 }}></i> </a>
+            >
+                <FormattedMessage id='SEE_ALL' />
+                <i class="bi bi-arrow-right-short" style={{ fontSize: 22 }}></i> 
+            </a>
 
 
 
