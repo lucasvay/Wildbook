@@ -8,6 +8,7 @@ const getMergeNotifications = async () => {
             },
         });
         const data = response.data;
+
         if (data.notifications) {
             return data.notifications;        }
         return[];
