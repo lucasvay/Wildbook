@@ -42,6 +42,7 @@ export default function BrutalismButton({
     };
 
     const handleButtonClick = (event) => {
+        event.preventDefault();
         if (!disabled && link) {
             window.location.href = link;
         }
