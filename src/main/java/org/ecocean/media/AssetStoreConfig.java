@@ -20,10 +20,9 @@ import com.google.gson.reflect.TypeToken;
  */
 public class AssetStoreConfig implements java.io.Serializable {
     private static final long serialVersionUID = 3467831207510138929L;
-//stream classdesc serialVersionUID = 3467831207510138929, local class serialVersionUID = 7067475630720091192
+// stream classdesc serialVersionUID = 3467831207510138929, local class serialVersionUID = 7067475630720091192
     private static Logger log = LoggerFactory.getLogger(AssetStoreConfig.class);
     private Map<String, String> config;
-
 
     /**
      * Create an empty config.
@@ -36,7 +35,8 @@ public class AssetStoreConfig implements java.io.Serializable {
      * Create a config by deserializing a string.
      */
     public AssetStoreConfig(final String configString) {
-        Type type = new TypeToken<HashMap<String, String>>() {}.getType();
+        Type type = new TypeToken<HashMap<String, String> >() {}
+        .getType();
 
         config = new Gson().fromJson(configString, type);
     }
@@ -49,7 +49,6 @@ public class AssetStoreConfig implements java.io.Serializable {
         if (value == null) throw new IllegalArgumentException("null value");
         config.put(key, value.toString());
     }
-
     /**
      * Return a config variable of the URL type, or null if it doesn't
      * exist or cannot be converted to a URL.
@@ -64,37 +63,31 @@ public class AssetStoreConfig implements java.io.Serializable {
             return null;
         }
     }
-
     /**
      * Return a config variable of the Path type.
      */
     public Path getPath(final String key) {
         return new File(config.get(key)).toPath();
     }
-
     /**
      * Return a config variable of the String type.
      */
     public String getString(final String key) {
         return config.get(key);
     }
-
     /**
      * Return a config variable of the boolean type.
      */
     public boolean getBoolean(final String key) {
         return "true".equalsIgnoreCase(config.get(key));
     }
-
     /**
      * Serialize our config object to a storable string.
      */
     public String configString() {
         return new Gson().toJson(config);
     }
-
     public String toString() {
         return configString();
     }
-
 }
